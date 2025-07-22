@@ -1,0 +1,43 @@
+name: atlas-infrastructure
+version: "1.0.0"
+description: "Professional infrastructure management and storage optimization tools"
+author: "Scott Akers"
+homepage: "https://github.com/scottakers/atlas-infrastructure-mcp"
+
+tools:
+  analyze_disk_usage:
+    description: "Analyze disk usage and provide comprehensive storage statistics"
+  get_system_stats:
+    description: "Get real-time system performance metrics including CPU, memory, and I/O"  
+  find_large_files:
+    description: "Find large files consuming storage space with intelligent analysis"
+  cleanup_recommendations:
+    description: "Get intelligent cleanup recommendations with potential space savings"
+  system_health_check:
+    description: "Comprehensive system health assessment with actionable insights"
+
+runtime:
+  type: python
+  entry_point: atlas_mcp_server.py
+  requirements:
+    - fastmcp>=2.10.0
+    - psutil>=7.0.0
+
+deploy:
+  auto_scale: true
+  memory: 256Mi
+  timeout: 30s
+  port: 8000
+
+pricing:
+  model: usage
+  rate: 0.005  # $0.005 per API call
+
+tags:
+  - infrastructure
+  - storage
+  - monitoring
+  - devops
+  - optimization
+
+category: infrastructure 
